@@ -1,0 +1,47 @@
+```{r}
+#Problem 1
+A = matrix(c(7, 9, 12, 2, 4, 13), nrow = 2, ncol = 3, byrow = TRUE)
+print(A)
+```
+```{r}
+B = matrix(c(1, 7, 12, 19, 2, 8, 13, 20, 3, 9, 14, 21), nrow = 3, ncol = 4, byrow = TRUE)
+print(B)
+```
+```{r}
+print(A %*% B)
+```
+```{r}
+#Problem 2
+Name <- c("Peter", "Amy", "Ryan", "Gary", "Michelle")
+Salary <- c(623.3, 515.2, 611, 729, 843.25)
+
+df1 <- data.frame(Name, Salary)
+df <- tibble::rowid_to_column(df1, "ID")
+print (df)
+
+```
+```{r}
+Department <- c("IT", "Finance", "Computer Science", "HR", "Mathematics" )
+df$Department <- department
+df
+```
+```{r}
+row_vec <- c("1","3", "5")
+col_vec <- c("Name","Salary")
+new_df <- df[row_vec ,col_vec]
+print (new_df)
+```
+```{r}
+barplot(new_df$Salary, names=new_df$Name, xlab = 'Name', ylab = 'Salary')
+```
+```{r}
+pie(df$Salary, labels = c("Peter", "Amy", "Ryan", "Gary", "Michelle"), clockwise = TRUE)
+```
+```{r}
+stats<- c(843.25, 515.2, 623.3)
+labels <- c("Highest Salary", "Lowest Salary", "Median Salary")
+
+pie(stats, labels, main = "Salary Descriptive Statistics",
+            col = rainbow(length(stats)))
+```
+
